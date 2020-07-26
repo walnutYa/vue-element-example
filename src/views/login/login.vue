@@ -8,14 +8,14 @@
       <!-- 头像区域 结束 -->
 
       <!-- 登陆表单区域 开始 -->
-      <el-form label-width="0px" class="login-form">
+      <el-form :model="loginData" label-width="0px" class="login-form">
         <!-- 用户名 -->
         <el-form-item>
-          <el-input></el-input>
+          <el-input v-model="loginData.name"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item>
-          <el-input></el-input>
+          <el-input v-model="loginData.password"></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
@@ -33,7 +33,12 @@ export default {
   name: 'LoginPage',
   components: {},
   data () {
-    return {}
+    return {
+      loginData: {
+        name: '',
+        password: ''
+      }
+    }
   },
   created () {},
   mounted () {},
